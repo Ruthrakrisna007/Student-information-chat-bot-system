@@ -1,0 +1,105 @@
+<html>
+<head>
+	
+<title>student reg</title>
+		
+
+	<body>
+		
+		<style>
+		
+		body{
+			margin:0;
+			padding:0;
+			background: url("http://campusbuzz.co.in/Images/1.jpg");
+
+		}
+		.container{
+			top:10%;
+			left:40%;
+			position:absolute;
+			transfrom:translate(-50%,-50%);
+			float:center;
+		}
+		.card{
+			padding:60px 40px 50px 40px;
+			background:rgb(50,50,50);
+			border-radious:10px;
+			float:center;
+		}
+			#name{
+				width:200px;
+				boder:none;
+				background:transparent;
+				border-bottom:1px solid:white;
+				padding:6px;
+				margin-bottom:20px;
+				color:white;
+			}
+			#button{
+				border:20px;
+				padding:10px 20px;
+				background:dodgerblue;
+				color:white;
+				margin-top:10px;
+				border:none;
+				outline:none;
+				margin-left:50px;
+			}
+			a{
+				font-size:13px;
+			}
+			img{
+				border-radious:50;
+				position:absolute;
+				margin-left:100px;
+				margin-top:-50px;
+			}
+			#slt-1{
+			    width:200px;
+				boder:none;
+				background:transparent;
+				border-bottom:1px solid:white;
+				padding:20px;
+				margin-bottom:40px;
+				color:white;
+			
+		
+				</style>
+				
+</head>
+
+<div class="container">
+<div class="card">
+<a href="/admin_home.html" class="btn btn-sucess" style="color:white;"><h2>Back</h2></a><br><br>
+<form action="/register" method="POST">
+<input type="text" placeholder="Student name" name="name" id="name" name=""><br>
+<input type="text" placeholder="Student Roll-no" name="rollnum" id="name"><br>
+
+<input type="password" placeholder="password" name="password" id="name"><br>
+
+<select name="degree" id="slt-1"><br>
+<option value="mca">MCA</option><br>
+<option value="B.sc(Computer Technology)">B.sc(Computer Technology)</option><br>
+<option value="B.sc(Commerce">B.sc(Commerce</option><br>
+
+</select><br>
+
+
+<select name="year" id="slt-1"><br>
+<option value="1">1st year</option>
+<option value="1">2nd year</option><br>
+<option value="1">3rd year</option><br>
+</select><br>
+
+
+<input type="submit" value="submit"id="button"><br>
+</form>
+</div>
+</div>
+</body>
+
+
+
+
+</html>

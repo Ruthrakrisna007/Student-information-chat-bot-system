@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p></p>
+  <p>Although the technology allows us to develop a bot that behaves in just about any way, that doesn t mean we should.
+
+</p>
+</div>
+
+<h2 style="text-align:center"></h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://image.flaticon.com/icons/png/512/1698/premium/1698535.png" alt="Jane" style="width:35%">
+      <div class="container">
+        <h2>ChatBot</h2>
+        <p class="title">What is ChatBot ?</p>
+        <p>A computer program designed to simulate conversation with human users, especially over the Internet.</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://www.virinchisoftware.com/images/chatbot-artes-icon-1.png" alt="Mike" style="width:20%">
+      <div class="container">
+        <h2>Features of Chatbot System</h2>
+        <p class="title"></p>
+        <p>1.Student Behaviour Tracking and Analytics</p>
+        <p>2.Campus Recruitment</p>
+        <p>3.Admission Management</p>
+        <p>4.Communication & social features</p>
+
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="data:image/jpeg;base64,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" alt="John" style="5%">
+      <div class="container">
+        <h2>How it is used?</h2>
+        <p class="title"></p>
+        <p>Chatbots improve the customer experience by giving them the quick answers they demand, on their terms, anytime and anywhere.</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

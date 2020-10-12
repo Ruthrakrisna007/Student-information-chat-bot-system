@@ -1,0 +1,49 @@
+body{
+margin:0;
+padding:0;
+top:100%;
+text-align:center;
+background:url("https://www.bradyware.com/wp-content/uploads/2018/06/contact-us-dealership-form-background.jpg");
+font-family:sans-serif;
+color:#fff;
+}
+.contact-title{
+margin:100px;
+color:#fff;
+text-transform:uppercase;
+transition:all 4% ease-in-out;
+}
+form{
+margin-top:50px;
+transtion:all4% ease-in-out;
+color:white;
+}
+
+.form-control{
+width:600px;
+background:#fff;
+border:none;
+color:white;
+outline:none;
+border-bottom:1px solid gray;
+color:#E74C3C;
+font-size:18px;
+margin-bottom:16px;
+}
+input{
+height:45px;
+color:black;
+}
+.form-control submit{
+background:#E74C3C;
+border-color:black;
+color:black;
+font-size:20px;
+font-weight :bold;
+letter-spacing:2px;
+margin-top:20px;
+
+
+}
+
+

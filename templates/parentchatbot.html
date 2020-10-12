@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+  background:url("https://miro.medium.com/max/5600/1*Tt2D3ZB1CMmJEwhgZC6-gA.jpeg");
+  background-repeat: no-repeat;
+
+}
+
+.container {
+  border: 2px solid #dedede;        
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 13px;
+  margin: 13px 0;
+
+
+}
+h2{
+	  color: red;
+
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+	
+</style>
+</head>
+
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+
+var invaild="";
+
+
+$("#senderClick").click(function(){
+var msg=$("#txtArea").val();
+invaild=msg;
+$(".chatlogs").append('<div class="container"><img src="https://pngimage.net/wp-content/uploads/2018/05/chatbot-png-5.png" alt="Avatar" style="width:100%;">  <p>'+msg+'</p>  <span class="time-right">11:00</span></div>');
+$("#txtArea").val('');
+$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		url: "/getchat",
+		data: {msg:msg},
+		success: function(data, textStatus ){
+		console.log(data);
+		 $(".chatlogs").append('<div class="container darker">  <img src="https://pngimage.net/wp-content/uploads/2018/05/chatbot-png-4.png" alt="Avatar" class="right" style="width:100%;">  <p>'+data.result+'</p>  <span class="time-left">11:01</span></div>');
+		 $("#chat-msg").val('');
+		},
+		error: function(xhr, textStatus, errorThrown){
+		//alert('request failed'+errorThrown);
+		}
+		
+		});
+
+});
+
+
+$("#invaildClick").click(function(){
+	
+	//alert(invaild);
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		url: "/invaildQus",
+		data: {
+			question:invaild
+		},
+		success: function(data, textStatus ){
+		console.log(data);
+		
+		},
+		error: function(xhr, textStatus, errorThrown){
+		//alert('request failed'+errorThrown);
+		}
+		
+		});
+
+
+});
+
+
+});
+</script>
+
+
+<body>
+
+<h2>Chat Messages</h2>
+
+<div class="chatlogs">
+<div class="container">
+  <img src="https://pngimage.net/wp-content/uploads/2018/05/chatbot-png-5.png" alt="Avatar" style="width:100%;">
+  <p>Hello. When is exam date?</p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div class="container darker">
+  <img src="https://pngimage.net/wp-content/uploads/2018/05/chatbot-png-4.png" alt="Avatar" class="right" style="width:100%;">
+
+  <p>Hey! Feb 20</p>
+  <span class="time-left">11:01</span>
+</div>
+
+<div class="container">
+  <img src="https://pngimage.net/wp-content/uploads/2018/05/chatbot-png-5.png" alt="Avatar" style="width:100%;">
+  <p>hello</p>
+  <span class="time-right">11:02</span>
+</div>
+
+<div class="container darker">
+	  <img src="https://pngimage.net/wp-content/uploads/2018/05/chatbot-png-4.png" alt="Avatar" class="right" style="width:100%;">
+
+  <p>Hello,how can i help you!!</p>
+  <span class="time-left">11:05</span>
+</div>
+</div>
+<div class="chat-form">
+	<center><textarea id = "txtArea"></textarea>
+	<button id="senderClick">Send</button>
+	<button id="invaildClick">Invalid Answer</button></center>
+	</div>
+
+
+
+</body>
+</html>

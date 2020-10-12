@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Asked question</title>
+<style>
+body{
+background:url("https://www.protechtgroup.com/hubfs/Need%20Help%20Defining%20a%20Risk%20Control%3F-1.jpg");
+background-position:center;
+			background-repeat:no-repeat;
+			background-size:cover;
+			height:70vh;
+}
+table{
+width:600px;
+height:50vh;
+background:white; 
+margin-top:150px;
+margin-left:50px;
+text-align:center;
+table-layout:fixed;
+}
+table,th,td{
+color:#fff;
+border-collapse:collapse;
+border:1px dotted white;
+text-align:center;
+font-family:Arial;
+background:orange;
+}
+td:hover{
+background:white;
+}
+</style>
+</head>
+<body>
+
+
+
+<table>
+<tr>
+<th>Id</th>
+<th> Invalid Question</th>
+<th>date</th>
+</tr>
+
+  {% if data is defined %}
+{% for trend in data %}
+
+<tr>
+    <td>{{trend[0]}}</td>
+    <td>{{trend[1]}}</td>
+    <td>{{trend[3]}}</td>    
+</tr>
+
+{% endfor %}
+
+{% endif %}
+
+</table>
+</body>
+</html>

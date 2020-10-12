@@ -1,0 +1,90 @@
+<html>
+<head>
+	
+<title>Student</title>  
+		
+
+	<body>
+		
+		<style>
+		
+		body{
+			margin:0;
+			padding:0;
+			background: url("https://images.startsat60.com/wp-content/uploads/20200124155148/0418_school_pencils_GT-3-1.jpg");
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:cover;
+			height:70vh;
+			 
+			
+
+		}
+		.container{
+			top:10%;
+			right:60%;
+			position:absolute;
+			transfrom:translate(-50%,-50%);
+			float:center;
+		}
+		.card{
+			padding:60px 40px 50px 40px;
+			background:rgb(50,50,50);
+			border-radious:50px;
+			float:center;
+		}
+			#name{
+				width:300px;
+				boder:none;
+				background:transparent;
+				border-bottom:1px solid:white;
+				padding:6px;
+				margin-bottom:50px;
+				color:White;
+			}
+			#button{
+				border:20px;
+				padding:20px 20px;
+				background:blue;
+				color:white;
+				margin-top:30px;
+				border:none;
+				outline:none;
+				margin-left:110px;
+			}
+			a{
+				font-size:18px;
+			}
+			img{
+				border-radious:50;
+				position:absolute;
+				margin-left:140px;
+				margin-top:-60px;
+			}
+		
+				</style>
+				
+</head>
+
+<div class="container">
+	<img src="https://cdn.iconscout.com/icon/free/png-512/user-avatar-contact-portfolio-personal-portrait-profile-6-5623.png" height="70" width="70">
+<div class="card">
+<p style="color:white;">{{status}}</p>
+
+<form action="/studentLogin" method="POST">
+<input type="text" placeholder="username" name="username" id="name"><br>
+<input type="password" placeholder="password" name="password" id="name"><br>
+<center><a href="#">Forget password?</a> </center><br>
+
+<input type="submit" value="submit"id="button"><br>
+
+</form>
+
+</div>
+</div>
+</body>
+
+
+
+
+</html>

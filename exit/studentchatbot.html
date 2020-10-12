@@ -1,0 +1,148 @@
+<html>
+<head>
+<link href="/static/css/studentchatbot.css" rel="stylesheet" type="text/css">
+
+<title>chatbot</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+var invaild="";
+
+$("#senderClick").click(function(){
+var msg=$("#txtArea").val();
+invaild=msg;
+$(".chatlogs").append("<div class='chat self'> <div class='user-photo'></div> <p class='chat-message'>"+msg+"</p></div>");
+$("#txtArea").val('');
+$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		url: "/getchat",
+		data: {msg:msg},
+		success: function(data, textStatus ){
+		console.log(data);
+		 $(".chatlogs").append("<div class='chat friend'><div class='user-photo'></div> <p class='chat-message'>"+data.result+"</p></div>");
+		 $("#chat-msg").val('');
+		 insertHistory(msg,data.result);
+		},
+		error: function(xhr, textStatus, errorThrown){
+		//alert('request failed'+errorThrown);
+		}
+		
+		});
+
+});
+
+
+$("#invaildClick").click(function(){
+	
+	//alert(invaild);
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		url: "/invaildQus",
+		data: {
+			question:invaild
+		},
+		success: function(data, textStatus ){
+		console.log(data);
+		
+		},
+		error: function(xhr, textStatus, errorThrown){
+		//alert('request failed'+errorThrown);
+		}
+		
+		});
+
+
+});
+
+
+});
+
+function insertHistory(msg,result){
+ // alert("result:"+result);
+    result+="";
+		$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		url: "/stuHistory",
+		data: {
+			answer:result,
+			question:msg
+			
+		},
+		success: function(data, textStatus ){
+		console.log(data);
+		
+		},
+		error: function(xhr, textStatus, errorThrown){
+		//alert('request failed'+errorThrown);
+		}
+		
+		});
+
+
+}
+</script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand text-uppercase" href="#"> Portal<span class="label label-success text-capitalize"></span></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+				
+				<li><a href="/student_home.html">Home</a></li>
+
+                <li><button type="button" class="btn btn-success navbar-btn btn-circle"><a href="/logout" style="color:white;">Logout</a></button></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+<div class="chatbox"> 
+<div class="chatlogs" style="overflow: scroll;"6> 
+	
+<div class="chat friend">
+<div class="user-photo"></div>
+<p class="chat-message">hai bro</p>
+</div>
+<div class="chat self">
+	<div class="user-photo"></div>
+	<p class="chat-message">What's up</p>
+</div>
+<div class="chat friend">
+<div class="user-photo"></div>
+<p class="chat-message">am doing project</p>
+</div>
+</div>
+
+<div class="chat-form">
+	<textarea id = "txtArea"></textarea>
+	<button id="senderClick">Send</button>
+	<button id="invaildClick">Invalid Answer</button>
+
+</body>
+</html>

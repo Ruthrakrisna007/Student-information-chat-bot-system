@@ -1,0 +1,100 @@
+<html>
+<head>
+	
+<title>Admin Question</title>
+		
+
+	<body>
+	<style>
+		
+		body{
+			margin:0;
+			padding:0;
+            background:url("http://codex-themes.com/scalia/one-page/wp-content/uploads/2014/12/header-background.jpg")
+            
+		}
+		.container{
+			top:10%;
+			left:40%;
+			position:absolute;
+			transfrom:translate(-40%,-40%);
+			float:center;
+			background-color:#388222;
+		}
+		.card{
+			padding:60px 40px 50px 40px;
+			background:rgb(50,50,50);
+			border-radious:10px;
+			float:center;
+		}
+		
+
+		
+			#name{
+				width:250px;
+				boder:none;
+				background:transparent;
+				border-bottom:1px solid:white;
+				padding:20px;
+				margin-bottom:40px;
+				color:white;
+			}
+			#slt-1{
+			    width:250px;
+				boder:none;
+				background:transparent;
+				border-bottom:1px solid:white;
+				padding:20px;
+				margin-bottom:40px;
+				color:black;
+			}
+			#button{
+				border:20px;
+				padding:10px 20px;
+				background:dodgerblue;
+				color:white;
+				margin-top:10px;
+				border:none;
+				outline:none;
+				margin-left:50px;
+				 
+			}
+			a{
+				font-size:20px;
+			}
+			img{
+				border-radious:50;
+				position:absolute;
+				margin-left:100px;
+				margin-top:-50px;
+			}
+			
+
+			    
+</style>
+				
+
+		
+</head>
+
+<div class="container">
+<div class="card">
+<center><h2 style="color:white;">Add Question</h2><center><br>
+<a href="/admin_home.html" class="btn btn-sucess" style="color:white;"><h3>Back</h3></a><br>
+<form action="/addQuestion" method="POST">
+<input type="text" placeholder="Mainkey Words" id="name" name="name"><br>
+<select name="visible" id="slt-1"><br>
+<option>Student Visible</option><br>
+<option value="1">Yes</option>
+<option value="1">No</option><br>
+</select><br>
+<input type="text" placeholder="Answer"id="name" name="answer"><br>
+
+
+<input type="submit" value="submit"id="button"><br>   
+
+
+</div>
+</div>
+</body>
+</html>

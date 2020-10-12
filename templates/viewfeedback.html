@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>table</title>
+<style>
+body{
+	 background:url("https://cdn.hipwallpaper.com/i/49/6/bT935I.jpg");
+     background-position:center;
+			background-repeat:no-repeat;
+			background-size:cover;
+			height:80vh;
+
+
+}
+table{
+width:600px;
+height:60vh;
+margin:auto;
+text-align:center;
+table-layout:fixed;
+}
+table,th,td{
+color:#fff;
+border-collapse:collapse;
+border:1px dotted white;
+text-align:center;
+font-family:Arial;
+background:liner-gradient(top,#3c3c3c 0%,#222222 100%);
+background:-webkit-linear-gradient(top,#3c3c3c 0%,#222222 100%);
+}
+td:hover{
+background:orange;
+}
+</style>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Feedback</th>
+<th>date</th>
+</tr>
+
+  {% if data is defined %}
+{% for trend in data %}
+<tr>
+    <td>{{trend[0]}}</td>
+	<td>{{trend[1]}}</td>
+	<td><p>{{trend[2]}}</p></td>
+    <td>{{trend[3]}}</td>
+    <td>{{trend[4]}}</td>
+
+  </tr>
+  
+  
+
+{% endfor %}
+
+{% endif %}
+
+</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>contact form design 
+</title>
+<link rel="stylesheet" href="/static/css/feedbackform.css">
+
+
+<body>
+<div class="contact-title">
+	<h3><a href="/parent_home.html" style="color:white;"><div class="btn btn-info">Back</div></a></h3>
+	<h2>Enter the Feedback Here!!<h2>
+</div>
+<div class="contact-form">
+	<form action="/feedBack" method="POST">
+	<input name= "name" type="text" class="form-control" placeholder="Your Name" required><br><br><br>
+	<input name="email" type="text" class="form-control" placeholder="Your Email" required><br><br><br>
+	<textarea name="message" class="form-control" placeholder="Message" rows="4" required></textarea><br><br><br>
+	<input type="submit" class="form-control submit" value="SEND MESSAGE">
+	</div>
+</form>
+</head>
+
+</html>

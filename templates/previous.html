@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Asked question</title>
+<style>
+body{
+background:url("https://2gajzj1ipjyu22j2zk1iyq5j-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/Books.jpg");
+background-position:center;
+			background-repeat:no-repeat;
+			background-size:cover;
+			height:80vh;
+}
+table{
+width:600px;
+height:50vh;
+margin-top:150px;
+margin-left:50px;
+text-align:center;
+table-layout:fixed;
+}
+table,th,td{
+color:#fff;
+border-collapse:collapse;
+border:1px dotted white;
+text-align:center;
+font-family:Arial;
+background:liner-gradient(top,#3c3c3c 0%,#222222 100%);
+background:-webkit-linear-gradient(top,#3c3c3c 0%,#222222 100%);
+}
+td:hover{
+background:orange;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<th>Id</th>
+<th>Question</th>
+<th>Answer</th>
+<th>date</th>
+
+  {% if data is defined %}
+{% for trend in data %}
+<tr>
+    <td>{{trend[0]}}</td>
+    <td>{{trend[1]}}</td>
+    <td>{{trend[2]}}</td>
+    <td>{{trend[3]}}</td>
+
+  </tr>
+ {% endfor %}
+
+{% endif %}
+
+
+</table>
+</body>
+</html>
